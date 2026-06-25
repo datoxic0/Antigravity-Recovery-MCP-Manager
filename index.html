@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Antigravity Recovery</title>
+  <link rel="stylesheet" href="styles.css">
+  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+  <div class="app-container">
+    <header class="app-header">
+      <img src="icon.png" alt="Logo" class="logo" width="48" height="48" style="border-radius: 12px; object-fit: cover;">
+      <h1>Antigravity Recovery & MCP Manager</h1>
+    </header>
+
+    <main class="content-area">
+      <!-- Safe Mode Section -->
+      <section class="panel safe-mode-panel">
+        <div class="panel-info">
+          <h2>Safe Mode Boot</h2>
+          <p>Reset all MCP configurations and launch the IDE cleanly if it's stuck on "Working...". A backup will be created.</p>
+        </div>
+        <button id="btn-safe-boot" class="btn btn-danger">
+          <span class="btn-icon">⚡</span> Panic Reboot
+        </button>
+      </section>
+
+      <!-- MCP Manager Section -->
+      <section class="panel mcp-manager-panel">
+        <div class="panel-header">
+          <h2>MCP Servers</h2>
+          <button id="btn-refresh" class="btn btn-icon-only" title="Refresh">🔄</button>
+        </div>
+        
+        <div class="mcp-list-container">
+          <div id="mcp-list" class="mcp-list">
+            <!-- Items injected by JS -->
+          </div>
+          <div id="mcp-empty-state" class="empty-state" style="display: none;">
+            No MCP servers configured.
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <div id="notification-toast" class="toast">
+      <span id="toast-message"></span>
+    </div>
+  </div>
+  <script src="renderer.js"></script>
+</body>
+</html>
